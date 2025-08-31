@@ -12,13 +12,15 @@ import sys
 from typing import Any, Dict, List, Optional, Union
 from datetime import datetime
 from pathlib import Path
+from mcp.server import Server
+from mcp.server.stdio import stdio_server
+from mcp.types import Tool, TextContent
 
-from mcp import Context, Tool, Resource, resource, tool, stdio_server
 from pydantic import BaseModel, Field
 from loguru import logger
 from dotenv import load_dotenv
 
-from agents.data_fetcher import DataFetcherAgent
+from .agents.data_fetcher import DataFetcherAgent
 from agents.statistical import StatisticalAnalysisAgent
 from agents.optimization import OptimizationAgent
 from agents.decision import DecisionAgent
